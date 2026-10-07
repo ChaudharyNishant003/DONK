@@ -13,7 +13,7 @@ test phone (CMF Phone) and a push of the `v2` branch.
 | D1 | Rebuild from the APK into this repo, full feature parity (MCP connectors and chat import included) | No source available; owner's permission |
 | D2 | New app ID `com.chaudharynishant.donk`, new release key; debug builds use `.dev` | Original signing key not available; old and new apps can run side by side for speed comparisons |
 | D3 | Same stack: Next.js static export + Tailwind v4 in a Capacitor WebView | Only way to keep visuals identical; class names and tokens are recovered from the 1.1.0-test1 bundle |
-| D4 | A native Kotlin core owns the database, AI pipeline, network, reminders and model files; the WebView only renders | PRD AP-1/2 (speed) and SE-1/2/5 (security) are the same piece of work |
+| D4 | A native Kotlin core owns the encrypted database, all network egress, secrets, model files, brain, voice, the System 1 classifier and reminders. App logic (agent loop, tools, screen documents) stays in TypeScript, ported almost 1:1 from 1.1.0-test1, and reaches native code through narrow plugins (batched SQL: one round trip per screen) | Exact parity with low risk, while PRD AP-1/2 (speed) and SE-1/2/5 (security) still hold: no keys and no network in the WebView |
 | D5 | The WebView has no network access. All egress goes through a native SecureFetch layer, which injects keys, enforces Private mode and writes the egress log | Keys never enter JavaScript (SE-2); Private mode is provable (SE-5) |
 | D6 | Keys are typed into a native, screenshot-blocked entry sheet styled with DONK tokens; stored in the SQLCipher database, each sealed with AES-256-GCM under a non-exportable Android Keystore key (StrongBox when available); optional "Include keys in backup" (off by default, re-encrypted with the backup password) | User asked for keys in the app and in the encrypted DB, never exposed |
 | D7 | Database: SQLCipher from the first rebuilt version, random key wrapped by the Keystore | SE-1 without a later migration |
@@ -33,12 +33,12 @@ test phone (CMF Phone) and a push of the `v2` branch.
 - [x] llama.cpp v0.6.0 NDK r29 smoke build: all 10 libraries 16 KB aligned
 
 ### R1 Spec from the APK
-- [ ] Design tokens, fonts, radii, shadows (light and dark)
-- [ ] Component catalog (Gallery page) and every screen's structure and class names
-- [ ] DB schema and migrations, backup file format
-- [ ] Agent: system prompts, tool schemas, model registry, providers, MCP and OAuth flows, chat import
-- [ ] Reference screenshots of every old screen (light and dark, 375 px wide)
-- [ ] Eval set: 400 labelled utterances (40% Hinglish, 35% Hindi, 25% English)
+- [x] Design tokens, fonts, radii, shadows (light and dark)
+- [x] Component catalog (65 components) and screen structure
+- [x] DB schema and migrations (backup file format: read during R3)
+- [x] Agent: system prompts, tool schemas, model registry, providers, MCP and OAuth flows, chat import
+- [x] Reference screenshots of every old screen (light and dark, 375 px wide)
+- [x] Eval set: 400 labelled utterances (40% Hinglish, 35% Hindi, 25% English)
 
 ### R2 UI rebuild
 - [ ] Today, Talk, Life (9 domains), Settings, Gallery, lock screen
