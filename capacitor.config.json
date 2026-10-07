@@ -1,0 +1,11 @@
+{
+  "appId": "com.chaudharynishant.donk",
+  "appName": "DONK",
+  "webDir": "web/out",
+  "android": {
+    "path": "android",
+    "allowMixedContent": false,
+    "captureInput": true,
+    "webContentsDebuggingEnabled": false
+  }
+}

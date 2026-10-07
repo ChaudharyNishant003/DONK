@@ -1,0 +1,42 @@
+# Dependencies and build output
+node_modules/
+web/.next/
+web/out/
+web/next-env.d.ts
+*.tsbuildinfo
+
+# Android
+android/.gradle/
+android/build/
+android/app/build/
+android/capacitor-cordova-android-plugins/build/
+android/local.properties
+android/.idea/
+android/app/src/main/assets/public/
+android/app/src/main/assets/capacitor.config.json
+android/app/src/main/assets/capacitor.plugins.json
+android/app/src/main/res/xml/config.xml
+*.apk
+*.aab
+
+# Native builds and downloaded third-party binaries
+native/build/
+native/.cxx/
+android/app/.cxx/
+third_party/downloads/
+
+# Secrets and machine-specific settings: never commit
+scripts/env.local.sh
+android/keystore.properties
+*.jks
+*.keystore
+.env
+.env.*
+
+# Eval recordings stay on this PC
+tools/eval/audio/
+
+# OS and editor files
+.DS_Store
+Thumbs.db
+.vscode/

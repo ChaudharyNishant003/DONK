@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">DONK</string>
+    <string name="title_activity_main">DONK</string>
+    <string name="package_name">com.chaudharynishant.donk</string>
+    <string name="custom_url_scheme">com.chaudharynishant.donk</string>
+</resources>

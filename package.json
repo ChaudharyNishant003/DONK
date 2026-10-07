@@ -1,0 +1,20 @@
+{
+  "name": "donk",
+  "private": true,
+  "description": "DONK: a private, voice-first life assistant for Android",
+  "workspaces": [
+    "web"
+  ],
+  "scripts": {
+    "web:dev": "npm run dev --workspace web",
+    "web:build": "npm run build --workspace web",
+    "cap:sync": "cap sync android",
+    "android:debug": "bash scripts/build-android.sh debug",
+    "android:release": "bash scripts/build-android.sh release",
+    "check:16kb": "bash scripts/check-16kb.sh"
+  },
+  "devDependencies": {
+    "@capacitor/android": "8.5.3",
+    "@capacitor/cli": "8.5.3"
+  }
+}
