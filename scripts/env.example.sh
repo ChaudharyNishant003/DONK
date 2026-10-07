@@ -7,6 +7,7 @@ export ANDROID_NDK_HOME="$ANDROID_HOME/ndk/29.0.14206865"
 export GRADLE_USER_HOME="D:/Android/gradle-home"
 export npm_config_cache="D:/Android/npm-cache"
 export NEXT_TELEMETRY_DISABLED=1
+export PLAYWRIGHT_BROWSERS_PATH="D:/Android/playwright"
 # PATH entries must use POSIX form under Git Bash ("D:/x" would split at the colon).
 if command -v cygpath >/dev/null 2>&1; then
   export PATH="$(cygpath -u "$JAVA_HOME")/bin:$(cygpath -u "$ANDROID_HOME")/platform-tools:$PATH"
