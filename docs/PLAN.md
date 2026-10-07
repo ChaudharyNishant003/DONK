@@ -30,7 +30,7 @@ test phone (CMF Phone) and a push of the `v2` branch.
 - [x] Repo layout, workspaces, Capacitor 8 Android project, build scripts
 - [x] Release keystore outside the repo; debug and release APKs build
 - [x] 16 KB alignment check script
-- [ ] llama.cpp NDK r29 smoke build (16 KB)
+- [x] llama.cpp v0.6.0 NDK r29 smoke build: all 10 libraries 16 KB aligned
 
 ### R1 Spec from the APK
 - [ ] Design tokens, fonts, radii, shadows (light and dark)
